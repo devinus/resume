@@ -1,0 +1,1 @@
+![Resume](DevinTorres.pdf "Resume")
