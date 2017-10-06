@@ -1,1 +1,3 @@
-![Resume](DevinTorres.pdf "Resume")
+# My Resume
+
+- [PDF](DevinAlexanderTorres.pdf)

@@ -12,4 +12,4 @@ watch:
 	@$(MAKE) WATCH=-pvc
 
 clean:
-	rm -rf build $(NAME).pdf
+	rm -rf build *.pdf
