@@ -5,6 +5,8 @@
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[margin=1in]{geometry}
+\usepackage{url}
+\usepackage[backend=biber,sorting=ydnt]{biblatex}
 
 \name{Devin}{Torres}
 \title{Full-Stack Engineering Lead}
@@ -15,16 +17,38 @@
 \social[linkedin]{devinus}
 \social[twitter]{devinus}
 
+\begin{filecontents}{resume.bib}
+  @article{salesforce-acquisition,
+    author  = {Ingrid Lunden},
+    title   = {
+  Salesforce acquires Rebel, maker of 'interactive' email services, to expand its Marketing Cloud},
+    journal = "TechCrunch",
+    date    = {2018-10-05},
+    url     = "https://techcrunch.com/2018/10/05/salesforce-acquires-rebel-maker-of-interactive-email-services-to-expand-its-marketing-cloud/"
+  }
+
+  @article{rebel-api,
+    author  = {Anthony Ha},
+    title   = {
+      Rebelmail launches an API to bring more interactivity to emails},
+    journal = "TechCrunch",
+    date    = {2016-11-15},
+    url     = "https://techcrunch.com/2016/11/15/rebelmail-api/"
+  }
+\end{filecontents}
+\addbibresource{resume.bib}
+
 \begin{document}
 \makecvtitle
 
 \section{Experience}
-\cventry{2017--Present}{Core Team}{Nano Foundation}{Austin}{TX}{Developer as part of the Core Team for Nano -- an instant, feeless cryptocurrency.}%
-\cventry{2015--Present}{Director of Engineering}{Rebel}{New York City}{NY}{Developed the world's first and only platform to build and send interactive emails. Responsible for ensuring the company meets it's engineering goals.%
+\cventry{2018--Present}{Principal Member of Technical Staff}{Salesforce}{New York City}{NY}{Recently joined as part of the Salesforce acquisition of Rebel. \cite{salesforce-acquisition}}%
+\cventry{2017--Present}{Core Team}{Nano Foundation}{Austin}{TX}{Developer as part of the Core Team for \href{https://nano.org}{Nano} -- an instant, feeless cryptocurrency.}%
+\cventry{2015--2018}{Director of Engineering}{Rebel}{New York City}{NY}{As the third employee, developed the world's first and only platform to build and send interactive emails.%
   \begin{itemize}%
+    \item Comprehensive REST API including several ESP, CRM, and analytics provider integrations \cite{rebel-api};
     \item Email builder using composable interactive Rebel components;
     \item Realtime analytics and reporting engine;
-    \item Comprehensive REST API including several ESP, CRM, and analytics provider integrations;
     \item All of this accomplished using a continuously deployed, automatically scaled microservices architecture.
   \end{itemize}}
 \cventry{2014--2015}{Lead Developer}{Clutch Analytics}{Austin}{TX}{Formed and lead a new team within an aggressive timeline to develop and launch new B2B2C software solutions for the auto insurance industry.%
@@ -43,11 +67,14 @@
 \cventry{2006--2007}{Online Creative Director}{Study Breaks Magazine}{Austin}{TX}{Responsible for all online strategies to further the magazine's web presence.}
 
 \section{Technologies}
-\cvdoubleitem{Languages}{JavaScript, TypeScript, Elixir, Erlang, Python, PHP, Go}{Databases}{PostgreSQL, MongoDB, InfluxDB, Redis, Couchbase}
-\cvdoubleitem{Frameworks}{Ember.js, Node.js, Ruby on Rails}{Platforms}{Amazon Web Services, Docker, Linux}
+\cvdoubleitem{Languages}{JavaScript, TypeScript, Elixir, Erlang, Python, Go, Rust, C, C++, Shell, PHP}{Databases}{PostgreSQL, MongoDB, InfluxDB, Redis, Couchbase}
+\cvdoubleitem{Frameworks}{Node.js, Ember.js, Electron, Phoenix}{Platforms}{Amazon Web Services, Docker, Kubernetes, Linux}
 
 \section{Projects}
-\cvitem{\href{https://github.com/devinus/poison}{Poison}}{An \href{https://tools.ietf.org/html/rfc7159}{RFC 7159} and \href{https://www.ecma-international.org/publications/standards/Ecma-404.htm}{ECMA 404} compliant \href{http://www.json.org/}{JSON} library for \href{https://elixir-lang.org/}{Elixir} used by \href{http://phoenixframework.org/}{Phoenix}. Currently the most popular library in the \href{https://hex.pm/}{Elixir ecosystem}. \url{https://github.com/devinus/poison}}
+\cvitem{\href{https://nanowalletcompany.com/}{Nano Wallet}}{An \href{https://electronjs.org/}{Electron} desktop wallet application for the \href{https://nano.org}{Nano} cryptocurrency. \url{https://github.com/nano-wallet-company/nano-wallet-desktop}}
+\cvitem{\href{https://hexdocs.pm/poison/Poison.html}{Poison}}{An \href{https://tools.ietf.org/html/rfc7159}{RFC 7159} and \href{https://www.ecma-international.org/publications/standards/Ecma-404.htm}{ECMA 404} compliant \href{http://www.json.org/}{JSON} library for \href{https://elixir-lang.org/}{Elixir} used by \href{http://phoenixframework.org/}{Phoenix}. Currently the most popular library in the \href{https://hex.pm/}{Elixir ecosystem}. \url{https://github.com/devinus/poison}}
 \cvitem{\href{https://github.com/devinus/poolboy}{Poolboy}}{An \href{https://www.erlang.org/}{Erlang} worker pool implementation used by \href{http://basho.com/}{Basho} in \href{http://basho.com/products/riak-kv/}{Riak}, \href{https://www.2600hz.com/}{2600hz} in \href{https://github.com/2600hz/kazoo}{Kazoo}, \href{https://www.irccloud.com/}{IRCCloud}, \href{http://chicagoboss.org/}{Chicago Boss}, and other high profile projects. \url{https://github.com/devinus/poolboy}}
+
+\printbibliography
 
 \end{document}
