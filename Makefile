@@ -4,12 +4,14 @@ NAME := $(shell finger "${USER}" | sed -e '/Name/!d' -e 's/.*Name: //' | tr -d '
 
 all: $(NAME).pdf
 
-$(NAME).pdf: ./src/resume.tex
-	latexmk -pdf -pdflatex="pdflatex -interaction=batchmode" -use-make -outdir=build $(WATCH) $<
+build/resume.pdf: src/resume.tex
+	@latexmk $<
+
+$(NAME).pdf: ./build/resume.pdf
 	cp ./build/resume.pdf $(NAME).pdf
 
 watch:
-	@$(MAKE) WATCH=-pvc
+	@env WATCH=1 $(MAKE)
 
 clean:
-	rm -rf build *.pdf
+	rm -rf build $(NAME).pdf
