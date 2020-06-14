@@ -7,10 +7,10 @@
 \usepackage[a4paper,margin=1in]{geometry}
 \usepackage{url}
 \usepackage{csquotes}
-\usepackage[backend=biber,sorting=ydnt]{biblatex}
+\usepackage[backend=biber,sorting=none]{biblatex}
 
 \name{Devin}{Torres}
-\title{Full-Stack Engineering Lead}
+\title{Full-Stack Engineering Leader and Architect}
 \phone[mobile]{+1-512-312-8954}
 \email{d@devinus.io}
 \homepage{devinus.io}
@@ -21,40 +21,67 @@
 \begin{filecontents}{resume.bib}
   @article{salesforce-acquisition,
     author  = {Ingrid Lunden},
-    title   = {
-  Salesforce acquires Rebel, maker of 'interactive' email services, to expand its Marketing Cloud},
-    journal = "TechCrunch",
+    title   = {Salesforce acquires Rebel, maker of 'interactive' email services, to expand its Marketing Cloud},
+    journal = {TechCrunch},
     date    = {2018-10-05},
-    url     = "https://techcrunch.com/2018/10/05/salesforce-acquires-rebel-maker-of-interactive-email-services-to-expand-its-marketing-cloud/"
+    url     = {https://techcrunch.com/2018/10/05/salesforce-acquires-rebel-maker-of-interactive-email-services-to-expand-its-marketing-cloud/}
+  }
+
+  @article{salesforce-integration,
+    author  = {Kyle Wiggers},
+    title   = {Salesforce launches new Einstein email capabilities for Marketing Cloud},
+    journal = {VentureBeat},
+    date    = {2019-10-24},
+    url     = {https://venturebeat.com/2019/10/24/salesforce-launches-new-einstein-email-capabilities-for-marketing-cloud/}
   }
 
   @article{rebel-api,
     author  = {Anthony Ha},
-    title   = {
-      Rebelmail launches an API to bring more interactivity to emails},
-    journal = "TechCrunch",
+    title   = {Rebelmail launches an API to bring more interactivity to emails},
+    journal = {TechCrunch},
     date    = {2016-11-15},
-    url     = "https://techcrunch.com/2016/11/15/rebelmail-api/"
+    url     = {https://techcrunch.com/2016/11/15/rebelmail-api/}
+  }
+
+  @patent{rebel-patent,
+    author      = {Joe Teplow and Scott Motte and Kevin Dutra and Mark Robbins and Yamil Asusta and Devin Torres and Steven Collins and Trever Faden and Derek Jacobi and Selby Kendrick and Johnny Omar Mejias and Luciano Adam Beckenman},
+    title       = {Generating interactive emails and tracking user interactions},
+    assignee    = {Rebelmail, Inc.},
+    nationality = {U.S.},
+    type        = {Patent Application},
+    number      = {20190044902},
+    yearfiled   = 2016,
+    monthfiled  = feb,
+    dayfiled    = 17,
+    year        = 2019,
+    month       = feb,
+    day         = 7,
+    url         = {https://patentscope.wipo.int/search/en/detail.jsf?docId=US236971019}
   }
 \end{filecontents}
+
 \addbibresource{resume.bib}
+\DeclareBibliographyCategory{patents}
+\addtocategory{patents}{rebel-patent}
 
 \begin{document}
+
 \makecvtitle
 
 \section{Experience}
-\cventry{2018--Present}{Principal Member of Technical Staff}{Salesforce}{New York City}{NY}{Joined as part of the Salesforce acquisition of Rebel. \cite{salesforce-acquisition}}%
+\cventry{2018--Present}{Principal Member of Technical Staff}{Salesforce}{New York City}{NY}{Joined as part of the Salesforce acquisition of Rebel \cite{salesforce-acquisition} whereupon we quickly and successfully integrated interactive email technology into the broader Salesforce Marketing Cloud ecosystem \cite{salesforce-integration}.}%
 \cventry{2017--2018}{Core Team}{Nano Foundation}{Austin}{TX}{Developer as part of the Core Team for \href{https://nano.org}{Nano} -- an instant, feeless cryptocurrency.}%
-\cventry{2015--2018}{Director of Engineering}{Rebel}{New York City}{NY}{As the third employee, developed the world's first and only platform to build and send interactive emails.%
+\cventry{2015--2018}{Director of Engineering}{Rebel}{New York City}{NY}{Hired as the third employee and developed the world's first and only platform to build and send interactive emails.%
   \begin{itemize}%
     \item Comprehensive REST API including several ESP, CRM, and analytics provider integrations \cite{rebel-api};
-    \item Email builder using composable interactive Rebel components;
+    \item Email WYSIWYG builder using composable interactive Rebel components;
     \item Realtime analytics and reporting engine;
-    \item All of this accomplished using a continuously deployed, automatically scaled microservices architecture.
+    \item Highly scalable transactional email delivery service;
+    \item All of this accomplished using a continuously deployed, automatically scaled idempotent microservices architecture.
   \end{itemize}}
-\cventry{2014--2015}{Lead Developer}{Clutch Analytics}{Austin}{TX}{Formed and lead a new team within an aggressive timeline to develop and launch new B2B2C software solutions for the auto insurance industry.%
+\cventry{2014--2015}{Lead Developer}{Clutch Analytics}{Austin}{TX}{Formed and lead a new team to develop and launch new B2B2C software solutions for the auto insurance industry within very aggressive timelines.%
   \begin{itemize}%
-    \item Developed a white-labeled eCommerce solution for independent insurance agents and launched before a strict deadline while under budget.
+    \item Developed a white-labeled eCommerce solution for independent insurance agents and launched before a hard deadline while remaining under budget.
     \item Designed a highly parallelizable, next-generation insurance rater for a new market using a custom rules engine that had to conform to strict legal requirements.
     \item Managed multiple outsourced teams that augmented local teams to help deliver objectives.
   \end{itemize}}
@@ -64,20 +91,25 @@
     \item Developed an online travel and tourism metasearch engine focusing on speed and extensibility.
     \item Redesigned and launched several multi-branded international websites.
   \end{itemize}}
-\cventry{2007--2007}{VP of Internet Design}{Wythagy}{Austin}{TX}{Second in charge overseeing all technical aspects of the startup. Worked with several clients to create innovative web 2.0 applications.}
+\cventry{2007--2007}{VP of Internet Design}{Wythagy}{Austin}{TX}{Served as a technical cofounder as we worked with several clients to create innovative web 2.0 applications.}
 \cventry{2006--2007}{Online Creative Director}{Study Breaks Magazine}{Austin}{TX}{Responsible for all online strategies to further the magazine's web presence.}
 
 \section{Technologies}
 \cvdoubleitem{Languages}{JavaScript, TypeScript, Elixir, Erlang, Python, Rust, Go, C, C++, Shell, PHP}{Databases}{PostgreSQL, MongoDB, InfluxDB, Redis, Couchbase}
-\cvdoubleitem{Frameworks}{Node.js, Ember.js, React, Electron, Phoenix}{Platforms}{Amazon Web Services, Docker, Kubernetes, Linux}
+\cvdoubleitem{Frameworks}{Node, React, Ember, Electron, Phoenix}{Platforms}{Amazon Web Services, Docker, Kubernetes, Linux}
 
 \clearpage
 
 \section{Projects}
 \cvitem{\href{https://nanowalletcompany.com/}{Nano Wallet}}{An \href{https://electronjs.org/}{Electron} desktop wallet application for the \href{https://nano.org}{Nano} cryptocurrency. \url{https://github.com/nano-wallet-company/nano-wallet-desktop}}
-\cvitem{\href{https://hexdocs.pm/poison/Poison.html}{Poison}}{An \href{https://tools.ietf.org/html/rfc7159}{RFC 7159} and \href{https://www.ecma-international.org/publications/standards/Ecma-404.htm}{ECMA 404} compliant \href{http://www.json.org/}{JSON} library for \href{https://elixir-lang.org/}{Elixir} used by \href{http://phoenixframework.org/}{Phoenix}. Currently the most popular library in the \href{https://hex.pm/}{Elixir ecosystem}. \url{https://github.com/devinus/poison}}
+\cvitem{\href{https://hexdocs.pm/poison/Poison.html}{Poison}}{An \href{https://tools.ietf.org/html/rfc7159}{RFC 7159} and \href{https://www.ecma-international.org/publications/standards/Ecma-404.htm}{ECMA 404} compliant \href{http://www.json.org/}{JSON} library. Currently one of the most popular library in the \href{https://hex.pm/}{Elixir ecosystem} used by \href{https://hex.pm/packages/poison}{over 1700+ dependents}. \url{https://github.com/devinus/poison}}
 \cvitem{\href{https://github.com/devinus/poolboy}{Poolboy}}{An \href{https://www.erlang.org/}{Erlang} worker pool implementation used by \href{http://basho.com/}{Basho} in \href{http://basho.com/products/riak-kv/}{Riak}, \href{https://www.2600hz.com/}{2600hz} in \href{https://github.com/2600hz/kazoo}{Kazoo}, \href{https://www.irccloud.com/}{IRCCloud}, \href{http://chicagoboss.org/}{Chicago Boss}, and other high profile projects. \url{https://github.com/devinus/poolboy}}
 
-\printbibliography
+\section{Patents}
+\begin{itemize}
+  \item \fullcite{rebel-patent}
+\end{itemize}
+
+\printbibliography[notcategory=patents]
 
 \end{document}
