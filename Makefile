@@ -1,12 +1,18 @@
-.PHONY: all watch clean
+.POSIX:
+.SUFFIXES:
 
+RM ?= rm -f
+
+.PHONY: all
 all: build/resume.pdf
 
-build/resume.pdf: src/resume.tex
-	@latexmk $<
-
+.PHONY: watch
 watch:
 	@env WATCH=1 $(MAKE)
 
+.PHONY: clean
 clean:
-	rm -rf build
+	$(RM) -r build
+
+build/resume.pdf: src/resume.tex
+	@latexmk src/resume.tex
