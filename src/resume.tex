@@ -8,24 +8,24 @@
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[a4paper,margin=1in]{geometry}
-\usepackage{url}
+\usepackage{anyfontsize}
 \usepackage{csquotes}
+\usepackage{url}
 \usepackage[backend=biber,sorting=none,maxnames=12]{biblatex}
 
 \name{Devin}{Torres}
 \title{Full-Stack Engineering Leader and Architect}
-\phone[mobile]{+1-512-312-8954}
+\phone[mobile]{+1–512–312–8954}
 \email{d@devinus.io}
 \homepage{devinus.io}
 \social[github]{devinus}
 \social[linkedin]{devinus}
-\social[twitter]{devinus}
 \photo{devin.jpg}
 
 \begin{filecontents}{resume.bib}
   @article{salesforce-acquisition,
     author  = {Ingrid Lunden},
-    title   = {Salesforce acquires Rebel, maker of 'interactive' email services, to expand its Marketing Cloud},
+    title   = {Salesforce acquires Rebel, maker of ‘interactive’ email services, to expand its Marketing Cloud},
     journal = {TechCrunch},
     date    = {2018-10-05},
     url     = {https://techcrunch.com/2018/10/05/salesforce-acquires-rebel-maker-of-interactive-email-services-to-expand-its-marketing-cloud/}
@@ -36,7 +36,7 @@
     title   = {Salesforce launches new Einstein email capabilities for Marketing Cloud},
     journal = {VentureBeat},
     date    = {2019-10-24},
-    url     = {https://venturebeat.com/2019/10/24/salesforce-launches-new-einstein-email-capabilities-for-marketing-cloud/}
+    url     = {https://venturebeat.com/business/salesforce-launches-new-einstein-email-capabilities-for-marketing-cloud/}
   }
 
   @article{rebel-api,
@@ -75,11 +75,11 @@
 
 \section{Experience}
 \cventry{2022--Present}{Software Engineer}{Grepable}{Austin}{TX}{Consulting provider for stealth startup. Developed backend services, production dashboards and CI/CD pipeline for their main product.}%
-\cventry{2018--2022}{Principal Member of Technical Staff}{Salesforce}{New York City}{NY}{Joined as part of the Salesforce acquisition of Rebel \cite{salesforce-acquisition} whereupon we quickly and successfully integrated interactive email technology into the broader Salesforce Marketing Cloud ecosystem \cite{salesforce-integration}.}%
-\cventry{2017--2018}{Core Team}{Nano Foundation}{Austin}{TX}{Developer as part of the Core Team for \href{https://nano.org}{Nano} -- an instant, feeless cryptocurrency.}%
+\cventry{2018--2022}{Principal Member of Technical Staff}{Salesforce}{New York City}{NY}{Joined as part of the Salesforce acquisition of Rebel~\cite{salesforce-acquisition} whereupon we quickly and successfully integrated interactive email technology into the broader Salesforce Marketing Cloud ecosystem~\cite{salesforce-integration}.}%
+\cventry{2017--2018}{Core Team}{Nano Foundation}{Austin}{TX}{Developer as part of the Core Team for \href{https://nano.org}{Nano} --- an instant, feeless cryptocurrency.}%
 \cventry{2015--2018}{Director of Engineering}{Rebel}{New York City}{NY}{Hired as the third employee and developed the world's first and only platform to build and send interactive emails.%
   \begin{itemize}%
-    \item Comprehensive REST API including several ESP, CRM, and analytics provider integrations \cite{rebel-api};
+    \item Comprehensive REST API including several ESP, CRM, and analytics provider integrations~\cite{rebel-api};
     \item Email WYSIWYG builder using composable interactive Rebel components;
     \item Realtime analytics and reporting engine;
     \item Highly scalable transactional email delivery service;
