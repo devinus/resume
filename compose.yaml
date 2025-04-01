@@ -1,0 +1,6 @@
+services:
+  builder:
+    build:
+      context: .
+    volumes:
+      - .:/usr/src/resume:delegated
