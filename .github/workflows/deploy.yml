@@ -21,7 +21,7 @@ jobs:
 
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}/resume.pdf
+      url: ${{ steps.deployment.outputs.page_url }}resume.pdf
 
     steps:
     - name: Checkout repository
